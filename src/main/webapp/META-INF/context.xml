@@ -22,9 +22,9 @@
     <!--
     <Manager pathname="" />
     -->
-    <Resource name="jdbc/mprohoro" auth="Container" type="javax.sql.DataSource"
+    <Resource name="jdbc/group06" auth="Container" type="javax.sql.DataSource"
               maxTotal="100" maxIdle="30" maxWaitMillis="10000"
-              username="mprohoro" password="014011747@Csc365" driverClassName="com.mysql.cj.jdbc.Driver"
-              url="jdbc:mysql://csc365.toshikuboi.net:3306/mprohoro"/>
+              username="group06" password="group06@CSC365" driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://csc365.toshikuboi.net:3306/group06"/>
 
 </Context>

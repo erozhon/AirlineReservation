@@ -10,7 +10,7 @@ public class DaoManagerFactory {
     Context initContext = new InitialContext();
     Context envContext  = (Context)initContext.lookup("java:comp/env");
     // change the jdbc/dbname to the resource name you registered in webapp/META-INF/context.xml
-    DataSource ds = (DataSource)envContext.lookup("jdbc/mprohoro");
+    DataSource ds = (DataSource)envContext.lookup("jdbc/group06");
     return new DaoManager(ds);
   }
 }
