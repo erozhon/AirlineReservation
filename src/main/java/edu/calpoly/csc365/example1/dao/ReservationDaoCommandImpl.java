@@ -20,12 +20,16 @@ public class ReservationDaoCommandImpl implements DaoCommand {
         try {
             conn = daoManager.getConnection();
             preparedStatement = conn.prepareStatement(
-                    "INSERT INTO Reservations (Id, Passenger_id, Seat_no, Flight_no) VALUES (?, ?, ?, ?)",
+                    "INSERT INTO Reservations (Id, Passenger_id, Seat_no, Flight_no, Credit_no, Cost, Has_paid, Cancelled) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                     Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, reservation.getId());
             preparedStatement.setInt(2, reservation.getPassengerId());
             preparedStatement.setInt(3, reservation.getSeatNo());
             preparedStatement.setDouble(4, reservation.getFlightNo());
+            preparedStatement.setLong(5, reservation.getCreditNo());
+            preparedStatement.setDouble(6, reservation.getCost());
+            preparedStatement.setBoolean(7, reservation.getHasPaid());
+            preparedStatement.setBoolean(8, reservation.getCancelled());
             //preparedStatement.setDate(5, reservation.getDate());
             rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {
