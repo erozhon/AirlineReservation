@@ -38,9 +38,6 @@ public class ReservationCreateServlet extends HttpServlet {
         Integer seatNo = Integer.parseInt(request.getParameter("Seat_no"));
         Boolean cancelled = Boolean.parseBoolean(request.getParameter("Cancelled"));
         Boolean hasPaid = Boolean.parseBoolean(request.getParameter("Has_paid"));
-        Date tdate = Date.valueOf(request.getParameter("date"));
-        System.out.println(tdate);
-        Double amount = Double.parseDouble(request.getParameter("amount"));
         Reservation reservation = new Reservation();
         reservation.setId(resId);
         reservation.setCost(cost);
