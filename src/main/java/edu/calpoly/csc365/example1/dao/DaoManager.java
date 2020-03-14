@@ -93,4 +93,8 @@ public class DaoManager {
   public Dao<Passenger> getPassengerDao() throws SQLException {
     return new PassengerDaoImpl(this.getConnection());
   }
+
+  public FlightDao getFlightDao() throws SQLException {
+    return new FlightDaoImpl(this.getConnection());
+  }
 }
