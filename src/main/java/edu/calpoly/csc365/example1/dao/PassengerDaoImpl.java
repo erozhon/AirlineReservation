@@ -117,6 +117,7 @@ public class PassengerDaoImpl implements Dao<Passenger> {
             preparedStatement = this.conn.prepareStatement(
                     "UPDATE Passengers SET name=? WHERE Id=?");
             preparedStatement.setString(1, obj.getName());
+            preparedStatement.setInt(2, obj.getId());
             preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
