@@ -30,7 +30,7 @@ public class ReservationCreateServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer customerId = Integer.parseInt(request.getParameter("Passenger_id"));
+        Integer passengerId = Integer.parseInt(request.getParameter("Passenger_id"));
         Integer flightId = Integer.parseInt(request.getParameter("Id"));
         Long cardNumber = Long.parseLong(request.getParameter("Credit_no"));
         Integer seatNo = Integer.parseInt(request.getParameter("Seat_no"));
@@ -38,7 +38,7 @@ public class ReservationCreateServlet extends HttpServlet {
         System.out.println(tdate);
         Double amount = Double.parseDouble(request.getParameter("amount"));
         Reservation reservation = new Reservation();
-        reservation.setPassengerId(customerId);
+        reservation.setPassengerId(passengerId);
         reservation.setCreditNo(cardNumber);
         reservation.setSeatNo(seatNo);
         reservation.setFlightNo(flightId);

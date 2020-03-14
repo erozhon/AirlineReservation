@@ -16,7 +16,7 @@
     <p><label for="Passenger Id">Passenger Id</label><br/><input type="text" name="Passenger_id" id="Passenger_id" value="" size="30"></p>
     <p><label for="Id">Id</label><br/><input type="text" name="Id" id="Id" value="" size="30"></p>
     <p><label for="Seat No">Seat No</label><br/><input type="text" name="Seat_no" id="Seat_no" value="" size="30"></p>
-    <p><label for="Flight No">Date</label><br/><input type="text" name="Flight_no" id="Flight_no" value="" size="30"></p>
+    <p><label for="Flight No">Flight No</label><br/><input type="text" name="Flight_no" id="Flight_no" value="" size="30"></p>
     <input type="submit">
 </form>
 </div>

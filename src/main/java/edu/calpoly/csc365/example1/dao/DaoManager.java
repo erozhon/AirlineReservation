@@ -40,6 +40,28 @@ public class DaoManager {
     catch(SQLException e) { throw e; }
   }
 
+  public Object reservation(DaoCommand command){
+    try{
+      this.conn.setAutoCommit(false);
+      Object returnValue = command.execute(this);
+      this.conn.commit();
+      return returnValue;
+    } catch(Exception e){
+      try {
+        this.conn.rollback();
+      } catch (SQLException ex) {
+        ex.printStackTrace();
+      }
+    } finally {
+      try {
+        this.conn.setAutoCommit(true);
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
+    }
+    return null;
+  }
+
   public Object transaction(DaoCommand command){
     try{
       this.conn.setAutoCommit(false);
@@ -81,6 +103,15 @@ public class DaoManager {
         return daoManager.transaction(command);
       }
     });
+  }
+
+  public Object reservationAndClose(final DaoCommand command) {
+    return executeAndClose(new DaoCommand() {
+      @Override
+      public Object execute(DaoManager daoManager) {
+        return daoManager.reservation(command);
+      }
+      });
   }
 
   public Dao<Customer> getCustomerDao() throws SQLException {
