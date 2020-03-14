@@ -32,14 +32,12 @@ public class ReservationCreateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer passengerId = Integer.parseInt(request.getParameter("Passenger_id"));
         Integer flightId = Integer.parseInt(request.getParameter("Flight_no"));
-        Integer resId = Integer.parseInt(request.getParameter("Id"));
         Double cost = Double.parseDouble(request.getParameter("Cost"));
         Long cardNumber = Long.parseLong(request.getParameter("Credit_no"));
         Integer seatNo = Integer.parseInt(request.getParameter("Seat_no"));
         Boolean cancelled = Boolean.parseBoolean(request.getParameter("Cancelled"));
         Boolean hasPaid = Boolean.parseBoolean(request.getParameter("Has_paid"));
         Reservation reservation = new Reservation();
-        reservation.setId(resId);
         reservation.setCost(cost);
         reservation.setHasPaid(hasPaid);
         reservation.setCancelled(cancelled);
