@@ -21,7 +21,7 @@ public class CreditCardDaoImpl implements Dao<CreditCard> {
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
     try {
-      preparedStatement = this.conn.prepareStatement("SELECT * FROM Cards WHERE number = ?");
+      preparedStatement = this.conn.prepareStatement("SELECT * FROM Cards WHERE num = ?");
       preparedStatement.setInt(1, id);
       resultSet = preparedStatement.executeQuery();
       Set<CreditCard> creditCards = unpackResultSet(resultSet);
@@ -54,11 +54,8 @@ public class CreditCardDaoImpl implements Dao<CreditCard> {
     ResultSet resultSet = null;
     try {
       preparedStatement = this.conn.prepareStatement(
-        "INSERT INTO Cards (type, `limit`, balance, active) VALUES (?, ?, ?, ?)");
-      preparedStatement.setString(1, obj.getType());
-      preparedStatement.setDouble(2, obj.getLimit());
-      preparedStatement.setDouble(3, obj.getBalance());
-      preparedStatement.setInt(4, obj.getActive() ? 1 : 0);
+        "INSERT INTO Cards (balance) VALUES (?)");
+      preparedStatement.setDouble(1, obj.getBalance());
       int numRows = preparedStatement.executeUpdate();
       if (numRows == 1) {
         // get generated id
@@ -93,13 +90,10 @@ public class CreditCardDaoImpl implements Dao<CreditCard> {
     PreparedStatement preparedStatement = null;
     try {
       preparedStatement = this.conn.prepareStatement(
-        "UPDATE Cards SET type = ?, `limit` = ?, balance = ?, active = ? WHERE number = ?",
+        "UPDATE Cards SET balance = ? WHERE number = ?",
         Statement.RETURN_GENERATED_KEYS);
-      preparedStatement.setString(1, obj.getType());
-      preparedStatement.setDouble(2, obj.getLimit());
-      preparedStatement.setDouble(3, obj.getBalance());
-      preparedStatement.setInt(4, obj.getActive() ? 1 : 0);
-      preparedStatement.setInt(5, obj.getCardNumber());
+      preparedStatement.setDouble(1, obj.getBalance());
+      preparedStatement.setInt(2, obj.getCardNumber());
       numRows = preparedStatement.executeUpdate();
     } catch (SQLException e) {
       e.printStackTrace();
@@ -141,11 +135,8 @@ public class CreditCardDaoImpl implements Dao<CreditCard> {
 
     while(rs.next()) {
       CreditCard creditCard = new CreditCard(
-        rs.getInt("number"),
-        rs.getString("type"),
-        rs.getDouble("limit"),
-        rs.getDouble("balance"),
-        rs.getBoolean("active"));
+        rs.getInt("num"),
+        rs.getDouble("balance"));
       creditCards.add(creditCard);
     }
     return creditCards;

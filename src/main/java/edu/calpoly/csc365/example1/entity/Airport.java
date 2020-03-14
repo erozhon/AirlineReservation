@@ -5,6 +5,7 @@ public class Airport {
     private String name;
     private String code;
     private String country;
+    private String cabbr;
 
 
     public Airport() {
@@ -12,13 +13,15 @@ public class Airport {
         this.name=null;
         this.code=null;
         this.country=null;
+        this.cabbr=null;
     }
 
-    public Airport(String city, String name, String code, String country) {
+    public Airport(String city, String name, String code, String country, String cabbr) {
         this.city=city;
         this.name=name;
         this.code=code;
         this.country=country;
+        this.cabbr=cabbr;
     }
 
     public String getCity() {
@@ -51,6 +54,15 @@ public class Airport {
 
     public void setCountry(String c) {
         this.country=c;
+    }
+
+
+    public String getCAbbr() {
+        return this.cabbr;
+    }
+
+    public void setCabbr(String c) {
+        this.cabbr=c;
     }
 
 }
