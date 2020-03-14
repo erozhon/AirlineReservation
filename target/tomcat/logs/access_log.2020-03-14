@@ -1,0 +1,13 @@
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:23:37 -0700] "GET /webapp_1 HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:23:38 -0700] "GET /webapp_1/ HTTP/1.1" 200 278 http-bio-8080-exec-2 679
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:23:38 -0700] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:23:55 -0700] "GET /webapp_1/passengers HTTP/1.1" 200 403706 http-bio-8080-exec-4 2211
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:24:01 -0700] "GET /webapp_1/login HTTP/1.1" 200 460 http-bio-8080-exec-5 427
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:24:10 -0700] "GET /webapp_1/transaction HTTP/1.1" 200 821 http-bio-8080-exec-6 63
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:24:13 -0700] "GET /webapp_1/customers HTTP/1.1" 302 - http-bio-8080-exec-7 341
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:24:13 -0700] "GET /webapp_1/login HTTP/1.1" 200 460 http-bio-8080-exec-8 2
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:43:29 -0700] "GET /webapp_1/login HTTP/1.1" 200 460 http-bio-8080-exec-10 3
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:43:51 -0700] "POST /webapp_1/login HTTP/1.1" 302 - http-bio-8080-exec-10 64
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:43:52 -0700] "GET /webapp_1/login HTTP/1.1" 200 460 http-bio-8080-exec-10 1
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:44:15 -0700] "POST /webapp_1/login HTTP/1.1" 302 - http-bio-8080-exec-10 36
+0:0:0:0:0:0:0:1 - - [14/Mar/2020:12:44:15 -0700] "GET /webapp_1/login HTTP/1.1" 200 460 http-bio-8080-exec-10 1
