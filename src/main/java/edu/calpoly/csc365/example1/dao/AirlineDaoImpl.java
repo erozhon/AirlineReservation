@@ -6,7 +6,7 @@ import java.sql.*;
 import java.util.HashSet;
 import java.util.Set;
 
-public class AirlineDaoImpl {
+public class AirlineDaoImpl implements Dao<Airline>{
     private Connection conn;
 
     public AirlineDaoImpl(Connection conn) {
@@ -118,7 +118,7 @@ public class AirlineDaoImpl {
     }
 
     private Set<Airline> unpackResultSet(ResultSet rs) throws SQLException {
-        Set<Airline> customers = new HashSet<Customer>();
+        Set<Airline> airlines = new HashSet<Airline>();
 
         while(rs.next()) {
             Airline airline = new Airline(
@@ -126,8 +126,12 @@ public class AirlineDaoImpl {
                     rs.getString("name"),
                     rs.getString("abbr"),
                     rs.getString("country"));
-            customers.add(airline);
+            airlines.add(airline);
         }
-        return customers;
+        return airlines;
+    }
+
+    public Integer insert(Airline obj) {
+        return 1;
     }
 }
