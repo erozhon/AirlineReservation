@@ -32,18 +32,38 @@ Message:
 <p><a href="./">home</a></p>
 <table>
     <thead>Reservations</thead>
-    <tr><th>id</th><th>passenger id</th><th>seat no</th><th>cost</th><th>credit card no</th><th>flight no</th><th>has paid</th><th>cancelled</th></tr>
-    <c:forEach items="${reservations}" var="reservation">
+    <tr>
+        <th>Flight Path</th>
+        <th>January</th>
+        <th>February</th>
+        <th>March</th>
+        <th>April</th>
+        <th>May</th>
+        <th>June</th>
+        <th>July</th>
+        <th>August</th>
+        <th>September</th>
+        <th>October</th>
+        <th>November</th>
+        <th>December</th>>
+        <th>Total Revenue</th>
+    </tr>
+    <c:forEach items="${revenues}" var="revenue">
         <tr>
-            <td>${reservation.id}</td>
-            <td>${reservation.passengerId}</td>
-            <td>${reservation.seatNo}</td>
-            <td>${reservation.cost}</td>
-            <td>${reservation.creditNo}</td>
-            <td>${reservation.flightNo}</td>
-            <td>${reservation.hasPaid}</td>
-            <td>${reservation.cancelled}</td>
-            <td><a data-id="${reservation.id}" href="edit_reservation?id=${reservation.id}">Edit</a></td>
+            <td>${revenue.flightPair}</td>
+            <td>${revenue.jan}</td>
+            <td>${revenue.feb}</td>
+            <td>${revenue.march}</td>
+            <td>${revenue.april}</td>
+            <td>${revenue.may}</td>
+            <td>${revenue.june}</td>
+            <td>${revenue.july}</td>
+            <td>${revenue.aug}</td>
+            <td>${revenue.sept}</td>
+            <td>${revenue.oct}</td>
+            <td>${revenue.nov}</td>
+            <td>${revenue.dec}</td>
+            <td>${revenue.total}</td>
         </tr>
     </c:forEach>
 </table>

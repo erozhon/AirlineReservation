@@ -22,9 +22,8 @@
 <body>
 Message:
 <p>${message}</p>
-<p><a href="./">home</a></p>
 <table>
-    <thead>Reservations</thead>
+    <thead>Flights</thead>
     <tr><th>id</th><th>passenger id</th><th>seat no</th><th>cost</th><th>credit card no</th><th>flight no</th><th>has paid</th><th>cancelled</th></tr>
     <c:forEach items="${reservations}" var="reservation">
         <tr>
@@ -36,7 +35,7 @@ Message:
             <td>${reservation.flightNo}</td>
             <td>${reservation.hasPaid}</td>
             <td>${reservation.cancelled}</td>
-            <td><a data-id="${reservation.id}" href="edit_reservation?id=${reservation.id}">Edit</a></td>
+            <td><a data-id="${reservation.id}" href="edit_reservation?id=${flight.id}">Edit</a></td>
         </tr>
     </c:forEach>
 </table>
