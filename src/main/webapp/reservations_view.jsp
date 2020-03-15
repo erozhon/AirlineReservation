@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Customers</title>
+    <title>Reservations</title>
     <style>
         table {
             font-family: arial, sans-serif;
@@ -39,7 +39,7 @@ Message:
         </tr>
     </c:forEach>
 </table>
-<p><a href="reservation">Add</a></p>
+<p><a href="reservationcreate">Add</a></p>
 <p><a href="./">home</a></p>
 </body>
 </html>

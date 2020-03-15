@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Customers</title>
+    <title>Passengers</title>
     <style>
         table {
             font-family: arial, sans-serif;
@@ -20,6 +20,7 @@
     </style>
 </head>
 <body>
+<p><a href="./">home</a></p>
 Message:
 <p>${message}</p>
 <table>

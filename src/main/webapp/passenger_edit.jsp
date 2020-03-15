@@ -1,4 +1,4 @@
-<%--
+reservationedit.jspreservationedit.jsp<%--
   Created by IntelliJ IDEA.
   User: toshihirokuboi
   Date: 2019-11-21
