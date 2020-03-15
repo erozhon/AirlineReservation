@@ -10,5 +10,6 @@
 <p><a href="./revenue">view revenues</a></p>
 <%--<p><a href="./login">login</a></p>--%>
 <%--<p><a href="./logout">logout</a></p>--%>
+<p><a href="./reservationsbyuser">View reservation history</a></p>
 </body>
 </html>
