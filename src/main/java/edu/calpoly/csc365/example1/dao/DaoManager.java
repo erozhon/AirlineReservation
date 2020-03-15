@@ -1,9 +1,6 @@
 package edu.calpoly.csc365.example1.dao;
 
-import edu.calpoly.csc365.example1.entity.Airline;
-import edu.calpoly.csc365.example1.entity.Customer;
-import edu.calpoly.csc365.example1.entity.Passenger;
-import edu.calpoly.csc365.example1.entity.Reservation;
+import edu.calpoly.csc365.example1.entity.*;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -134,7 +131,11 @@ public class DaoManager {
     return new FlightDaoImpl(this.getConnection());
   }
 
-  public Dao<Airline> getAirlineDao() throws SQLException {
+  public AirlineDao getAirlineDao() throws SQLException {
     return new AirlineDaoImpl(this.getConnection());
+  }
+
+  public SeatDao getSeatDao() throws SQLException {
+    return new SeatDaoImpl(this.getConnection());
   }
 }
