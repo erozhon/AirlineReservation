@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Reservation</title>
+    <title>Create a Reservation</title>
 </head>
 <body>
 <div style="width:30%;height:50%;margin:10% auto;padding: 10px;">
