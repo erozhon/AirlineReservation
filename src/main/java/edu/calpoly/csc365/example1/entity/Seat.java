@@ -6,19 +6,22 @@ public class Seat {
     private Integer seatNo;
     private String type;
     private String seatClass;
+    private boolean taken;
 
     public Seat(){
         this.flightId=null;
         this.seatNo=null;
         this.seatClass=null;
         this.type=null;
+        this.taken=false;
     }
 
-    public Seat(Integer flightId, Integer seatNo, String type, String seatClass){
+    public Seat(Integer flightId, Integer seatNo, String type, String seatClass, boolean taken){
         this.flightId=flightId;
         this.seatClass=seatClass;
         this.seatNo=seatNo;
         this.type=type;
+        this.taken=taken;
     }
 
     public Integer getFlightId() {
@@ -53,4 +56,11 @@ public class Seat {
         this.seatClass = seatClass;
     }
 
+    public boolean getTaken() {
+        return taken;
+    }
+
+    public void setTaken(boolean taken) {
+        this.taken = taken;
+    }
 }

@@ -3,13 +3,14 @@ package edu.calpoly.csc365.example1.dao;
 import edu.calpoly.csc365.example1.entity.Flight;
 
 import java.sql.Date;
+import java.util.Set;
 
 public interface FlightDao extends Dao<Flight>{
 
-    Flight getBySource(String source);
-    Flight getByDestination(String destination);
-    Flight getByTakeoff(Date d);
-    Flight getByArrival(Date d);
+    Set<Flight> getBySource(String source);
+    Set<Flight> getByDestination(String destination);
+    Set<Flight> getByTakeoff(Date d);
+    Set<Flight> getByArrival(Date d);
     Boolean isFull(Integer id);
 
 

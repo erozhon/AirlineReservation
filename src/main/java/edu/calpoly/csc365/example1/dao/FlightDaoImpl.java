@@ -1,6 +1,5 @@
 package edu.calpoly.csc365.example1.dao;
 
-import edu.calpoly.csc365.example1.entity.Customer;
 import edu.calpoly.csc365.example1.entity.Flight;
 
 import java.sql.*;
@@ -186,16 +185,15 @@ public class FlightDaoImpl implements FlightDao {
         return flights;
     }
 
-    public Flight getBySource(String source){
-        Flight flight = null;
+    public Set<Flight> getBySource(String source){
+        Set<Flight> flights = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
             preparedStatement = this.conn.prepareStatement("SELECT * FROM Flights WHERE Source=?");
             preparedStatement.setString(1, source);
             resultSet = preparedStatement.executeQuery();
-            Set<Flight> flights = unpackResultSet(resultSet);
-            flight = (Flight) flights.toArray()[0];
+            flights = unpackResultSet(resultSet);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -212,20 +210,19 @@ public class FlightDaoImpl implements FlightDao {
                 e.printStackTrace();
             }
         }
-        return flight;
+        return flights;
     }
 
 
-    public Flight getByDestination(String destination){
-        Flight flight = null;
+    public Set<Flight> getByDestination(String destination){
+        Set<Flight> flights = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
             preparedStatement = this.conn.prepareStatement("SELECT * FROM Flights WHERE Destination=?");
             preparedStatement.setString(1, destination);
             resultSet = preparedStatement.executeQuery();
-            Set<Flight> flights = unpackResultSet(resultSet);
-            flight = (Flight) flights.toArray()[0];
+            flights = unpackResultSet(resultSet);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -242,20 +239,19 @@ public class FlightDaoImpl implements FlightDao {
                 e.printStackTrace();
             }
         }
-        return flight;
+        return flights;
     }
 
 
-    public Flight getByTakeoff(Date d){
-        Flight flight = null;
+    public Set<Flight> getByTakeoff(Date d){
+        Set<Flight> flights = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
-            preparedStatement = this.conn.prepareStatement("SELECT * FROM Flights WHERE Takeoff=?");
+            preparedStatement = this.conn.prepareStatement("SELECT * FROM Flights WHERE DATE_FORMAT(Arrival, '%Y-%m-%d')=?");
             preparedStatement.setDate(1, d);
             resultSet = preparedStatement.executeQuery();
-            Set<Flight> flights = unpackResultSet(resultSet);
-            flight = (Flight) flights.toArray()[0];
+            flights = unpackResultSet(resultSet);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -272,20 +268,19 @@ public class FlightDaoImpl implements FlightDao {
                 e.printStackTrace();
             }
         }
-        return flight;
+        return flights;
     }
 
 
-    public Flight getByArrival(Date d){
-        Flight flight = null;
+    public Set<Flight> getByArrival(Date d){
+        Set<Flight> flights = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
-            preparedStatement = this.conn.prepareStatement("SELECT * FROM Flights WHERE Arrival=?");
+            preparedStatement = this.conn.prepareStatement("SELECT * FROM Flights WHERE DATE_FORMAT(Arrival, '%Y-%m-%d')=?");
             preparedStatement.setDate(1, d);
             resultSet = preparedStatement.executeQuery();
-            Set<Flight> flights = unpackResultSet(resultSet);
-            flight = (Flight) flights.toArray()[0];
+            flights = unpackResultSet(resultSet);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -302,7 +297,7 @@ public class FlightDaoImpl implements FlightDao {
                 e.printStackTrace();
             }
         }
-        return flight;
+        return flights;
     }
 
 
