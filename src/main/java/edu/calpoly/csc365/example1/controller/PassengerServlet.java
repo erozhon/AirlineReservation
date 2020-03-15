@@ -29,16 +29,9 @@ import java.util.Set;
         }
 
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//            Cookie loginCookie = AuthenticationService.getLoginCookie(request);
-//            if (loginCookie == null) {
-//                response.sendRedirect("login");
-//            } else {
-//                response.addCookie(loginCookie);
-                Set<Passenger> passengers = passengerDao.getAll();
-                request.setAttribute("passengers", passengers);
-                //request.setAttribute("message", "Hello " + loginCookie.getValue());
-                request.getRequestDispatcher("passengers.jsp").forward(request, response);
-            //}
+            Set<Passenger> passengers = passengerDao.getAll();
+            request.setAttribute("passengers", passengers);
+            request.getRequestDispatcher("passengers.jsp").forward(request, response);
         }
     }
 

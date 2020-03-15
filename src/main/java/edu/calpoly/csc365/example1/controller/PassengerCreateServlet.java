@@ -39,4 +39,3 @@ import java.io.IOException;
             response.sendRedirect("edit_passenger?id=" + id.toString());
         }
     }
-
