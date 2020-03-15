@@ -22,7 +22,7 @@
 <body>
 Message:
 <p>${message}</p>
-<form method="get" action="reservationsbyuser">
+<form method="post" action="reservationsbyuser">
     <p><label for="Passenger_id">PassengerID</label><br/><input type="text" name="Passenger_id" id="Passenger_id" value="${passenger.id}" size="30" readonly="readonly"></p>
     <input type="submit">
 </form>
@@ -43,7 +43,6 @@ Message:
         </tr>
     </c:forEach>
 </table>
-<p><a href="reservation">Add</a></p>
 <p><a href="./">home</a></p>
 </body>
 </html>

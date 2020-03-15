@@ -28,10 +28,11 @@ public class ReservationByUserServlet extends HttpServlet {
         reservationDao = dm.getReservationDao();
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer passengerId = Integer.parseInt(request.getParameter("Passenger_id"));
         Set<Reservation> reservations = ((ReservationDaoImpl)reservationDao).getByPassengerId(passengerId);
         request.setAttribute("reservations", reservations);
-        request.getRequestDispatcher("reservations_Userviews.jsp").forward(request, response);
+        request.getRequestDispatcher("reservationsbyuser.jsp").forward(request, response);
     }
 }
