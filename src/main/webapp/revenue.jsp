@@ -31,7 +31,7 @@ Message:
 <p>${message}</p>
 <p><a href="./">home</a></p>
 <table>
-    <thead>Reservations</thead>
+    <thead>Revenue</thead>
     <tr>
         <th>Flight Path</th>
         <th>January</th>
