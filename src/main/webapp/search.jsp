@@ -13,14 +13,13 @@
 <body>
 <div style="width:30%;height:50%;margin:10% auto;padding: 10px;">
     <p><a href="./">home</a></p>
-<form method="post" action="search_query">
-    <p><label for="Date">Date</label><br/><input type="text" name="Date" id="Date" value="" size="30"></p>
-    <p><label for="Source">Source</label><br/><input type="text" name="Source" id="Source" value="" size="30"></p>
-    <p><label for="Destination">Destination</label><br/><input type="text" name="Destination" id="Destination" value="" size="30"></p>
-    <p><label for="seatType">Seat Type</label><br/><input type="text" name="seatType" id="seatType" value="" size="30"></p>
-    <p><label for="seatClass">Seat Class</label><br/><input type="text" name="seatClass" id="seatClass" value="" size="30"></p>
-    <input type="submit">
-</form>
+    <form method="post" action="search_query">
+        <p><label for="Date">Date</label><br/><input type="text" name="Date" id="Date" value="" size="30"></p>
+        <p><label for="Source">Source</label><br/><input type="text" name="Source" id="Source" value="" size="30"></p>
+        <p><label for="Destination">Destination</label><br/><input type="text" name="Destination" id="Destination" value="" size="30"></p>
+        <p><label for="seatType">Seat Type</label><br/><input type="text" name="seatType" id="seatType" value="" size="30"></p>
+        <p><label for="seatClass">Seat Class</label><br/><input type="text" name="seatClass" id="seatClass" value="" size="30"></p>
+        <input type="submit">
 </div>
 </body>
 </html>

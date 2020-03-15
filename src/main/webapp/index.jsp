@@ -5,7 +5,7 @@
 <p><a href="./flights">flights</a></p>
 <%--<p><a href="./customers">customers</a></p>--%>
 <%--<p><a href="./transaction">create a transaction</a></p>--%>
-<p><a href="./search">search for a flight</a></p>
+<p><a href="./search_query">search for a flight</a></p>
 <p><a href="./reservationcreate">create a reservation</a></p>
 <p><a href="./reservations">view reservations</a></p>
 <p><a href="./revenue">view revenues</a></p>

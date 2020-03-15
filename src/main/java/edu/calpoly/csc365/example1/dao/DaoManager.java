@@ -131,7 +131,7 @@ public class DaoManager {
     return new FlightDaoImpl(this.getConnection());
   }
 
-  public Dao<Seat> getSeatsDao() throws SQLException {
+  public SeatsDaoImpl getSeatsDao() throws SQLException {
     return new SeatsDaoImpl(this.getConnection());
   }
 

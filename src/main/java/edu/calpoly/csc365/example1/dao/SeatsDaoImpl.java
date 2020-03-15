@@ -149,9 +149,9 @@ public class SeatsDaoImpl implements Dao<Seat> {
         while(rs.next()) {
             Seat seat = new Seat(
                     rs.getInt("SeatNo"),
-                    rs.getInt("FlightNo"),
+                    rs.getInt("FlightId"),
                     rs.getString("type"),
-                    rs.getString("SeatClass"),
+                    rs.getString("class"),
                     rs.getBoolean("taken"));
             seats.add(seat);
         }

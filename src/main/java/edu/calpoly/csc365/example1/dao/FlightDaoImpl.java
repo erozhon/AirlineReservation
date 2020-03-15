@@ -192,6 +192,7 @@ public class FlightDaoImpl implements FlightDao {
         try {
             preparedStatement = this.conn.prepareStatement("SELECT * FROM Flights WHERE Source=?");
             preparedStatement.setString(1, source);
+            System.out.println(preparedStatement);
             resultSet = preparedStatement.executeQuery();
             flights = unpackResultSet(resultSet);
         } catch (SQLException e) {
@@ -248,10 +249,11 @@ public class FlightDaoImpl implements FlightDao {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
-            preparedStatement = this.conn.prepareStatement("SELECT * FROM Flights WHERE DATE_FORMAT(Arrival, '%Y-%m-%d')=?");
+            preparedStatement = this.conn.prepareStatement("SELECT * FROM Flights WHERE DATE_FORMAT(Takeoff, '%Y-%m-%d')=?");
             preparedStatement.setDate(1, d);
             resultSet = preparedStatement.executeQuery();
             flights = unpackResultSet(resultSet);
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
