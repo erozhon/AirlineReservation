@@ -3,6 +3,7 @@ package edu.calpoly.csc365.example1.controller;
 import edu.calpoly.csc365.example1.dao.DaoManagerFactory;
 import edu.calpoly.csc365.example1.dao.Dao;
 import edu.calpoly.csc365.example1.dao.DaoManager;
+import edu.calpoly.csc365.example1.dao.ReservationDaoImpl;
 import edu.calpoly.csc365.example1.entity.Customer;
 import edu.calpoly.csc365.example1.entity.Reservation;
 import edu.calpoly.csc365.example1.service.AuthenticationService;
@@ -29,7 +30,7 @@ public class ReservationByUserServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer passengerId = Integer.parseInt(request.getParameter("Passenger_id"));
-        Set<Reservation> reservations = reservationDao.getByPassengerId(passengerId);
+        Set<Reservation> reservations = ((ReservationDaoImpl)reservationDao).getByPassengerId(passengerId);
         request.setAttribute("reservations", reservations);
         request.getRequestDispatcher("reservations_Userviews.jsp").forward(request, response);
     }
