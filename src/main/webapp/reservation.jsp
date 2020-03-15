@@ -12,6 +12,7 @@
 </head>
 <body>
 <div style="width:30%;height:50%;margin:10% auto;padding: 10px;">
+    <p><a href="./">home</a></p>
 <form method="post" action="reservationcreate">
     <p><label for="Passenger Id">Passenger Id</label><br/><input type="text" name="Passenger_id" id="Passenger_id" value="" size="30"></p>
     <p><label for="Seat No">Seat No</label><br/><input type="text" name="Seat_no" id="Seat_no" value="" size="30"></p>

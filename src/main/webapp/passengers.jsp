@@ -20,6 +20,7 @@
     </style>
 </head>
 <body>
+<p><a href="./">home</a></p>
 Message:
 <p>${message}</p>
 <table>

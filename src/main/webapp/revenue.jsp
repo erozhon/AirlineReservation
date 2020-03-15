@@ -29,14 +29,21 @@
 <body>
 Message:
 <p>${message}</p>
+<p><a href="./">home</a></p>
 <table>
-    <thead>Revenue By Month</thead>
-    <tr><th>id</th><th>name</th><th></th></tr>
-    <c:forEach items="${passengers}" var="passenger">
+    <thead>Reservations</thead>
+    <tr><th>id</th><th>passenger id</th><th>seat no</th><th>cost</th><th>credit card no</th><th>flight no</th><th>has paid</th><th>cancelled</th></tr>
+    <c:forEach items="${reservations}" var="reservation">
         <tr>
-            <td>${passenger.id}</td>
-            <td>${passenger.name}</td>
-            <td><a data-id="${passenger.id}" href="edit_passenger?id=${passenger.id}">Edit</a></td>
+            <td>${reservation.id}</td>
+            <td>${reservation.passengerId}</td>
+            <td>${reservation.seatNo}</td>
+            <td>${reservation.cost}</td>
+            <td>${reservation.creditNo}</td>
+            <td>${reservation.flightNo}</td>
+            <td>${reservation.hasPaid}</td>
+            <td>${reservation.cancelled}</td>
+            <td><a data-id="${reservation.id}" href="edit_reservation?id=${reservation.id}">Edit</a></td>
         </tr>
     </c:forEach>
 </table>
