@@ -7,6 +7,7 @@
 <p><a href="./transaction">create a transaction</a></p>
 <p><a href="./reservationcreate">create a reservation</a></p>
 <p><a href="./reservations">view reservations</a></p>
+<p><a href="./reservationsbyuser">View reservation history</a></p>
 <p><a href="./login">login</a></p>
 <p><a href="./logout">logout</a></p>
 </body>

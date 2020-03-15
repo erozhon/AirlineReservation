@@ -1,5 +1,4 @@
 package edu.calpoly.csc365.example1.dao;
-
 import edu.calpoly.csc365.example1.entity.Reservation;
 
 import java.sql.*;
@@ -20,15 +19,15 @@ public class ReservationDaoCommandImpl implements DaoCommand {
         try {
             conn = daoManager.getConnection();
             preparedStatement = conn.prepareStatement(
-                    "INSERT INTO Reservations (Passenger_id, Seat_no, Flight_no, Credit_no, Cost, Has_paid, Cancelled) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                    "INSERT INTO Reservations (Passenger_id, Seat_no, Flight_no, Credit_no,3 Cost, Has_paid, Cancelled) VALUES (?, ?, ?, ?, ?, ?, ?)",
                     Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setInt(1, reservation.getPassengerId());
             preparedStatement.setInt(2, reservation.getSeatNo());
             preparedStatement.setDouble(3, reservation.getFlightNo());
             preparedStatement.setLong(4, reservation.getCreditNo());
-            preparedStatement.setDouble(5, reservation.getCost());
-            preparedStatement.setBoolean(6, reservation.getHasPaid());
-            preparedStatement.setBoolean(7, reservation.getCancelled());
+            preparedStatement.setDouble(5, 80.00);
+            preparedStatement.setBoolean(6, false);
+            preparedStatement.setBoolean(7, false);
             rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {
                 resultSet = preparedStatement.getGeneratedKeys();
