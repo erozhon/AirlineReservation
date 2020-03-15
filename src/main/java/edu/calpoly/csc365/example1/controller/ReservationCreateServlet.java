@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 
 @WebServlet(name = "ReservationCreateServlet", urlPatterns = "/reservationcreate")
 public class ReservationCreateServlet extends HttpServlet {
@@ -32,15 +31,9 @@ public class ReservationCreateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer passengerId = Integer.parseInt(request.getParameter("Passenger_id"));
         Integer flightId = Integer.parseInt(request.getParameter("Flight_no"));
-        Double cost = Double.parseDouble(request.getParameter("Cost"));
         Long cardNumber = Long.parseLong(request.getParameter("Credit_no"));
         Integer seatNo = Integer.parseInt(request.getParameter("Seat_no"));
-        Boolean cancelled = Boolean.parseBoolean(request.getParameter("Cancelled"));
-        Boolean hasPaid = Boolean.parseBoolean(request.getParameter("Has_paid"));
         Reservation reservation = new Reservation();
-        reservation.setCost(cost);
-        reservation.setHasPaid(hasPaid);
-        reservation.setCancelled(cancelled);
         reservation.setPassengerId(passengerId);
         reservation.setCreditNo(cardNumber);
         reservation.setSeatNo(seatNo);

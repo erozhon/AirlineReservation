@@ -1,6 +1,4 @@
-
-
-    package edu.calpoly.csc365.example1.controller;
+package edu.calpoly.csc365.example1.controller;
 
 import edu.calpoly.csc365.example1.dao.DaoManagerFactory;
 import edu.calpoly.csc365.example1.dao.Dao;
@@ -30,16 +28,8 @@ import java.util.Set;
         }
 
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            //Cookie loginCookie = AuthenticationService.getLoginCookie(request);
-//            if (loginCookie == null) {
-//                response.sendRedirect("login");
-//            } else {
-//                response.addCookie(loginCookie);
                 Set<Reservation> reservations = reservationDao.getAll();
                 request.setAttribute("reservations", reservations);
-                //request.setAttribute("message", "Hello " + loginCookie.getValue());
                 request.getRequestDispatcher("reservations_view.jsp").forward(request, response);
             }
         }
-
-
