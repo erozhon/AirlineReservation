@@ -1,6 +1,6 @@
 package edu.calpoly.csc365.example1.dao;
 
-import com.sun.org.apache.regexp.internal.RE;
+//import com.sun.org.apache.regexp.internal.RE;
 import edu.calpoly.csc365.example1.entity.Customer;
 import edu.calpoly.csc365.example1.entity.Reservation;
 
@@ -44,6 +44,34 @@ import java.util.Set;
                 }
             }
             return reservation;
+        }
+
+        public Set<Reservation> getByPassengerId(int id) {
+            Set<Reservation> reservations = null;
+            PreparedStatement preparedStatement = null;
+            ResultSet resultSet = null;
+            try {
+                preparedStatement = this.conn.prepareStatement("SELECT * FROM Reservations WHERE Passenger_id=?");
+                preparedStatement.setInt(1, id);
+                resultSet = preparedStatement.executeQuery();
+                reservations = unpackResultSet(resultSet);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (resultSet != null)
+                        resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    if (preparedStatement != null)
+                        preparedStatement.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            return reservations;
         }
 
         @Override

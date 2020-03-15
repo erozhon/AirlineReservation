@@ -24,7 +24,7 @@ public class Flight {
         this.capacity=null;
     }
 
-    public Flight(int airline, int Id, String source, String destination, Date takeoff, Date arrival, boolean full, int capacity) {
+    public Flight(int Id, int airline, String source, String destination, Date takeoff, Date arrival, boolean full, int capacity) {
         this.Id=Id;
         this.airline=airline;
         this.source=source;
@@ -99,6 +99,17 @@ public class Flight {
     }
 
 
-
-
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "airline=" + airline +
+                ", Id=" + Id +
+                ", source='" + source + '\'' +
+                ", destination='" + destination + '\'' +
+                ", takeoff=" + takeoff +
+                ", arrival=" + arrival +
+                ", full=" + full +
+                ", capacity=" + capacity +
+                '}';
+    }
 }
