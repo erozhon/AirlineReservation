@@ -25,7 +25,7 @@
 <p><a class="waves-effect waves-light btn" href="./revenue">view revenues</a></p>
 <%--<p><a class="waves-effect waves-light btn" href="./login">login</a></p>--%>
 <%--<p><a class="waves-effect waves-light btn" href="./logout">logout</a></p>--%>
-<p><a class="waves-effect waves-light btn" href="./reservationsbyuser">View reservation history</a></p>
+<p><a class="waves-effect waves-light btn" href="./reservationsbyuserquery">View reservation history</a></p>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>
