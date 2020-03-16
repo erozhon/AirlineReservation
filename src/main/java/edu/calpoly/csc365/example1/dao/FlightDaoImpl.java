@@ -3,8 +3,10 @@ package edu.calpoly.csc365.example1.dao;
 import edu.calpoly.csc365.example1.entity.Flight;
 
 import java.sql.*;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TimeZone;
 
 public class FlightDaoImpl implements FlightDao {
     private Connection conn;
@@ -169,6 +171,7 @@ public class FlightDaoImpl implements FlightDao {
 
     private Set<Flight> unpackResultSet(ResultSet rs) throws SQLException {
         Set<Flight> flights = new HashSet<Flight>();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("PST"));
 
         while(rs.next()) {
             Flight flight = new Flight(
@@ -176,7 +179,7 @@ public class FlightDaoImpl implements FlightDao {
                     rs.getInt("Airline"),
                     rs.getString("Source"),
                     rs.getString("Destination"),
-                    rs.getDate("Takeoff"),
+                    rs.getDate("Takeoff", calendar),
                     rs.getDate("Arrival"),
                     rs.getBoolean("full"),
                     rs.getInt("Capacity"));

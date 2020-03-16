@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
-<div style="width:30%;height:50%;margin:10% auto;padding: 10px;">
+<div style="margin:auto;padding: 10px;">
     <p><a href="./">Home</a></p>
     <p><a href="./search_query">Search Again</a></p>
     <table>

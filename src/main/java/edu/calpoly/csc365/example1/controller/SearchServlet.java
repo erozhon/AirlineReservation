@@ -97,6 +97,12 @@ public class SearchServlet extends HttpServlet {
             for (Seat s: seats ) {
                 if (s.getTaken())
                     continue;
+                if (seatType.length() > 0 && !seatType.equals(s.getType())) {
+                    continue;
+                }
+                if (seatClass.length() > 0 && !seatClass.equals(s.getSeatClass())) {
+                    continue;
+                }
                 results.add(new Search(f, s));
             }
         }
@@ -109,8 +115,8 @@ public class SearchServlet extends HttpServlet {
         private Integer Id;
         private String source;
         private String destination;
-        private Date takeoff;
-        private Date arrival;
+        private String takeoff;
+        private String arrival;
         private Integer seatNo;
         private String type;
         private String seatClass;
@@ -120,8 +126,8 @@ public class SearchServlet extends HttpServlet {
             this.Id=f.getId();
             this.source=f.getSource();
             this.destination=f.getDestination();
-            this.takeoff=f.getTakeoff();
-            this.arrival=f.getArrival();
+            this.takeoff=f.getTakeoff().toString();
+            this.arrival=f.getArrival().toString();
             this.seatNo = s.getSeatNo();
             this.type = s.getType();
             this.seatClass = s.getSeatClass();
@@ -159,20 +165,20 @@ public class SearchServlet extends HttpServlet {
             this.destination = destination;
         }
 
-        public Date getTakeoff() {
+        public String getTakeoff() {
             return takeoff;
         }
 
         public void setTakeoff(Date takeoff) {
-            this.takeoff = takeoff;
+            this.takeoff = takeoff.toString();
         }
 
-        public Date getArrival() {
+        public String getArrival() {
             return arrival;
         }
 
         public void setArrival(Date arrival) {
-            this.arrival = arrival;
+            this.arrival = arrival.toString();
         }
 
         public Integer getSeatNo() {
