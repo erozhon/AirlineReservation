@@ -23,13 +23,10 @@ public class SearchQueryServlet extends HttpServlet {
 
     public SearchQueryServlet() throws Exception {
         dm = DaoManagerFactory.createDaoManager();
-        System.out.println("test3");
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(request.getAttribute("results"));
-        System.out.println("tester");
         request.getRequestDispatcher("search_query.jsp").forward(request, response);
     }
 }

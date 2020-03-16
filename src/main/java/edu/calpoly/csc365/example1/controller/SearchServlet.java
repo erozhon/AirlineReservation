@@ -33,8 +33,6 @@ public class SearchServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println(request.getAttribute("results"));
-        System.out.println("test");
         request.getRequestDispatcher("search.jsp").forward(request, response);
     }
 
@@ -102,12 +100,7 @@ public class SearchServlet extends HttpServlet {
                 results.add(new Search(f, s));
             }
         }
-        request.setAttribute("results", results);
-        System.out.println(request.getAttribute("results"));
-        System.out.println("test1");
-        (request.getSession()).setAttribute("results", results);
-        System.out.println((request.getSession()).getAttribute("results"));
-//        doGet(request, response);
+        request.setAttribute("res", results);
         request.getRequestDispatcher("search.jsp").forward(request, response);
     }
 

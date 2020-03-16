@@ -1,4 +1,6 @@
-<%--
+<%@ page import="edu.calpoly.csc365.example1.controller.SearchServlet" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: toshihirokuboi
   Date: 2019-11-21
@@ -42,20 +44,23 @@
             <th>Seat Type</th>
             <th>Seat Class</th>
         </tr>
-        <c:out value='${sessionScope.results}'/>
-        <c:forEach var="res" items="${results}">
-            <tr>
-                <td>${res.Id}</td>
-                <td>${res.airline}</td>
-                <td>${res.source}</td>
-                <td>${res.destination}</td>
-                <td>${res.takeoff}</td>
-                <td>${res.arrival}</td>
-                <td>${res.seatNo}</td>
-                <td>${res.type}</td>
-                <td>${res.seatClass}</td>
-            </tr>
-        </c:forEach>
+        <% List<SearchServlet.Search> results = (ArrayList<SearchServlet.Search>)request.getAttribute("res");
+
+            for(SearchServlet.Search result : results)
+            {
+                out.print("<tr><td>" + result.getId() + "</td>");
+                out.print("<td>" + result.getAirline() + "</td>");
+                out.print("<td>" + result.getSource() + "</td>");
+                out.print("<td>" + result.getDestination() + "</td>");
+                out.print("<td>" + result.getTakeoff() + "</td>");
+                out.print("<td>" + result.getArrival() + "</td>");
+                out.print("<td>" + result.getSeatNo() + "</td>");
+                out.print("<td>" + result.getType() + "</td>");
+                out.print("<td>" + result.getSeatClass() + "</td>");
+                out.print("<td><a href='reservationcreate?seat_no=" + result.getSeatNo() + "&flight_no=" + result.getId() + "'> Book it </a></td></tr>");
+            }
+
+        %>
     </table>
 </div>
 </body>

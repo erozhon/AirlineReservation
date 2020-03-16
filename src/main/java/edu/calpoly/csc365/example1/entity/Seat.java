@@ -16,7 +16,7 @@ public class Seat {
         this.taken=false;
     }
 
-    public Seat(Integer flightId, Integer seatNo, String type, String seatClass, boolean taken){
+    public Seat(Integer seatNo, Integer flightId, String type, String seatClass, boolean taken){
         this.flightId=flightId;
         this.seatClass=seatClass;
         this.seatNo=seatNo;

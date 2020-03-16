@@ -22,4 +22,13 @@
 </form>
 </div>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        const queryString = window.location.search;
+        var seat_no = queryString.split("?")[1].split("&")[0].split("=")[1];
+        var flight_no = queryString.split("?")[1].split("&")[1].split("=")[1];
+        document.getElementById('Seat_no').value = seat_no;
+        document.getElementById('Flight_no').value = flight_no;
+    });
+</script>
 </html>
