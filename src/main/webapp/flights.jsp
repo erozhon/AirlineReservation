@@ -3,28 +3,20 @@
 <html>
 <head>
     <title>Flights</title>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
+<h3 class="flow-text">Flights</h3>
 Message:
-<p>${message}</p>
-<p><a href="./">home</a></p>
-<table>
-    <thead>Flights</thead>
+<p class="flow-text">${message}</p>
+<p class="flow-text"><a href="./" class="waves-effect waves-light btn">home</a></p>
+<table class="highlight">
     <tr><th>id</th><th>airline</th><th>source</th><th>destination</th><th>takeoff</th><th>arrival</th><th>full</th><th>capacity</th></tr>
     <c:forEach items="${flights}" var="flight">
         <tr>
@@ -36,11 +28,12 @@ Message:
             <td>${flight.arrival}</td>
             <td>${flight.full}</td>
             <td>${flight.capacity}</td>
-            <td><a data-id="${flight.id}" href="edit_flight?id=${flight.id}">Edit</a></td>
+            <td><a data-id="${flight.id}" href="edit_flight?id=${flight.id}" class="waves-effect waves-light btn">Edit</a></td>
         </tr>
     </c:forEach>
 </table>
-<p><a href="create_flight">Add</a></p>
-<p><a href="./">home</a></p>
+<p><a href="create_flight" class="waves-effect waves-light btn">Add</a></p>
+<p><a href="./" class="waves-effect waves-light btn">home</a></p>
+<script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>
