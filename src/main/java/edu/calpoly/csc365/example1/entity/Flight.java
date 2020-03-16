@@ -24,6 +24,21 @@ public class Flight {
         this.capacity=null;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        Flight f;
+        try {
+            f = (Flight)obj;
+        } catch (Exception e) { return false;}
+        return airline == f.getAirline() && Id == f.getId() && source.equals(f.getSource()) && destination.equals(f.getDestination())
+                && takeoff.equals(f.getTakeoff()) && arrival.equals(f.getArrival()) && full == f.getFull() && capacity == f.getCapacity();
+    }
+
+    @Override
+    public int hashCode() {
+        return (destination.hashCode()+source.hashCode())*Id;
+    }
+
     public Flight(int Id, int airline, String source, String destination, Date takeoff, Date arrival, boolean full, int capacity) {
         this.Id=Id;
         this.airline=airline;

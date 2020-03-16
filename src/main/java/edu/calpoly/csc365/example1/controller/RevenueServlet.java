@@ -212,7 +212,6 @@ public class RevenueServlet extends HttpServlet {
         Set<Flight> flightsSet = flightDao.getAll();
         ArrayList<Flight> flights = new ArrayList<Flight>(flightsSet);
         Collections.sort(flights, new Comparator<Flight>() { public int compare(Flight f1, Flight f2) {return f1.getId() - f2.getId();}});
-        System.out.println(flights);
         for (Reservation res: reservations ) {
             Flight flight = flights.get(res.getFlightNo() - 1);
             String flightPath = String.format("%s => %s", flight.getSource(), flight.getDestination());
@@ -222,7 +221,6 @@ public class RevenueServlet extends HttpServlet {
             if (res.getHasPaid()) {
                 flightPathToRevenue.get(flightPath).addRevenue(flight.getTakeoff(), res.getCost());
             }
-//            System.out.println("res num: " + res.getId());
         }
             ArrayList<Revenue> revenues = new ArrayList<Revenue>(Collections.list(flightPathToRevenue.elements()));
             Collections.sort(revenues, new Comparator<Revenue>() { public int compare(Revenue r1, Revenue r2) {return r1.getFlightPair().compareTo(r2.getFlightPair());}});

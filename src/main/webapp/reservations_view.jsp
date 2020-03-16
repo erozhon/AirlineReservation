@@ -35,7 +35,7 @@ Message:
             <td>${reservation.flightNo}</td>
             <td>${reservation.hasPaid}</td>
             <td>${reservation.cancelled}</td>
-            <td><a data-id="${reservation.id}" href="edit_reservation?id=${flight.id}">Edit</a></td>
+            <td><a data-id="${reservation.id}" href="edit_reservation?id=${reservation.id}">Edit</a></td>
         </tr>
     </c:forEach>
 </table>
