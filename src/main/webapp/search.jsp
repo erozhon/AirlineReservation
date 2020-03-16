@@ -11,28 +11,21 @@
 <html>
 <head>
     <title>Results</title>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
+<h3>Flights and Their Available Seats</h3>
 <div style="margin:auto;padding: 10px;">
-    <p><a href="./">Home</a></p>
-    <p><a href="./search_query">Search Again</a></p>
-    <table>
-        <thead>Flights and Their Available Seats</thead>
+    <p><a class="waves-effect waves-light btn" href="./">Home</a></p>
+    <p><a class="waves-effect waves-light btn" href="./search_query">Search Again</a></p>
+    <table class="highlight">
         <tr>
             <th>Id</th>
             <th>Airline</th>
@@ -57,11 +50,12 @@
                 out.print("<td>" + result.getSeatNo() + "</td>");
                 out.print("<td>" + result.getType() + "</td>");
                 out.print("<td>" + result.getSeatClass() + "</td>");
-                out.print("<td><a href='reservationcreate?seat_no=" + result.getSeatNo() + "&flight_no=" + result.getId() + "'> Book it </a></td></tr>");
+                out.print("<td><a class='waves-effect waves-light btn' href='reservationcreate?seat_no=" + result.getSeatNo() + "&flight_no=" + result.getId() + "'> Book it </a></td></tr>");
             }
 
         %>
     </table>
 </div>
+<script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>

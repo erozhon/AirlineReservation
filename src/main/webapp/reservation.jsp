@@ -9,16 +9,28 @@
 <html>
 <head>
     <title>Create a Reservation</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        input[type="submit"] {
+            color: whitesmoke;
+        }
+    </style>
 </head>
 <body>
 <div style="width:30%;height:50%;margin:10% auto;padding: 10px;">
-    <p><a href="./">home</a></p>
+    <p><a class="waves-effect waves-light btn" href="./">home</a></p>
 <form method="post" action="reservationcreate">
     <p><label for="Passenger Id">Passenger Id</label><br/><input type="text" name="Passenger_id" id="Passenger_id" value="" size="30"></p>
     <p><label for="Seat No">Seat No</label><br/><input type="text" name="Seat_no" id="Seat_no" value="" size="30"></p>
     <p><label for="Flight No">Flight No</label><br/><input type="text" name="Flight_no" id="Flight_no" value="" size="30"></p>
     <p><label for="Credit No">Credit No</label><br/><input type="text" name="Credit_no" id="Credit_no" value="" size="30"></p>
-    <input type="submit">
+    <input class="waves-effect waves-light btn" type="submit">
 </form>
 </div>
 </body>
@@ -31,4 +43,5 @@
         document.getElementById('Flight_no').value = flight_no;
     });
 </script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
 </html>
