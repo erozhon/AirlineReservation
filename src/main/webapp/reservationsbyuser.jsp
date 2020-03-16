@@ -23,7 +23,7 @@
 Message:
 <p>${message}</p>
 <form method="post" action="reservationsbyuser">
-    <p><label for="Passenger_id">PassengerID</label><br/><input type="text" name="Passenger_id" id="Passenger_id" value="${passenger.id}" size="30" readonly="readonly"></p>
+    <p><label for="Passenger_id">PassengerID</label><br/><input type="text" name="Passenger_id" id="Passenger_id" value="" size="30" readonly="readonly"></p>
     <input type="submit">
 </form>
 <table>

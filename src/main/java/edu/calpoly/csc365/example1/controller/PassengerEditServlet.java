@@ -13,8 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
-
     @WebServlet(name = "PassengerEditServlet", urlPatterns = "/edit_passenger")
     public class PassengerEditServlet extends HttpServlet {
         private DaoManager dm;

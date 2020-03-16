@@ -35,4 +35,6 @@ public class ReservationByUserServlet extends HttpServlet {
         request.setAttribute("reservations", reservations);
         request.getRequestDispatcher("reservationsbyuser.jsp").forward(request, response);
     }
+
+
 }
