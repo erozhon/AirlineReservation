@@ -111,7 +111,8 @@ public class SeatDaoImpl implements SeatDao{
                     rs.getInt("flightId"),
                     rs.getInt("seatNo"),
                     rs.getString("seatClass"),
-                    rs.getString("type"));
+                    rs.getString("type"),
+                    rs.getBoolean("taken"));
             seats.add(seat);
         }
         return seats;
