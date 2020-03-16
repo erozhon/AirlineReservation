@@ -192,7 +192,6 @@ public class FlightDaoImpl implements FlightDao {
         try {
             preparedStatement = this.conn.prepareStatement("SELECT * FROM Flights WHERE Source=?");
             preparedStatement.setString(1, source);
-            System.out.println(preparedStatement);
             resultSet = preparedStatement.executeQuery();
             flights = unpackResultSet(resultSet);
         } catch (SQLException e) {

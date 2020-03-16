@@ -8,18 +8,55 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Search for Flights</title>
+    <title>Results</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
 <body>
 <div style="width:30%;height:50%;margin:10% auto;padding: 10px;">
-    <p><a href="./">home</a></p>
-    <form method="post" action="search_query">
-        <p><label for="Date">Date</label><br/><input type="text" name="Date" id="Date" value="" size="30"></p>
-        <p><label for="Source">Source</label><br/><input type="text" name="Source" id="Source" value="" size="30"></p>
-        <p><label for="Destination">Destination</label><br/><input type="text" name="Destination" id="Destination" value="" size="30"></p>
-        <p><label for="seatType">Seat Type</label><br/><input type="text" name="seatType" id="seatType" value="" size="30"></p>
-        <p><label for="seatClass">Seat Class</label><br/><input type="text" name="seatClass" id="seatClass" value="" size="30"></p>
-        <input type="submit">
+    <p><a href="./">Home</a></p>
+    <p><a href="./search_query">Search Again</a></p>
+    <table>
+        <thead>Flights and Their Available Seats</thead>
+        <tr>
+            <th>Id</th>
+            <th>Airline</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Takeoff</th>
+            <th>Arrival</th>
+            <th>Seat Number</th>
+            <th>Seat Type</th>
+            <th>Seat Class</th>
+        </tr>
+        <c:out value='${sessionScope.results}'/>
+        <c:forEach var="res" items="${results}">
+            <tr>
+                <td>${res.Id}</td>
+                <td>${res.airline}</td>
+                <td>${res.source}</td>
+                <td>${res.destination}</td>
+                <td>${res.takeoff}</td>
+                <td>${res.arrival}</td>
+                <td>${res.seatNo}</td>
+                <td>${res.type}</td>
+                <td>${res.seatClass}</td>
+            </tr>
+        </c:forEach>
+    </table>
 </div>
 </body>
 </html>
