@@ -10,28 +10,20 @@
 <html>
 <head>
     <title>Revenue</title>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
+<h3>Revenue</h3>
 Message:
 <p>${message}</p>
-<p><a href="./">home</a></p>
-<table>
-    <thead>Revenue</thead>
+<p><a class="waves-effect waves-light btn" href="./">home</a></p>
+<table class="highlight">
     <tr>
         <th>Flight Path</th>
         <th>January</th>
@@ -45,7 +37,7 @@ Message:
         <th>September</th>
         <th>October</th>
         <th>November</th>
-        <th>December</th>>
+        <th>December</th>
         <th>Total Revenue</th>
     </tr>
     <c:forEach items="${revenues}" var="revenue">
@@ -67,7 +59,8 @@ Message:
         </tr>
     </c:forEach>
 </table>
-<p><a href="create_passenger">Add</a></p>
-<p><a href="./">home</a></p>
+<p><a class="waves-effect waves-light btn" href="create_passenger">Add</a></p>
+<p><a class="waves-effect waves-light btn" href="./">home</a></p>
+<script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>
