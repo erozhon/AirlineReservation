@@ -1,4 +1,4 @@
-  package edu.calpoly.csc365.example1.controller;
+package edu.calpoly.csc365.example1.controller;
 
 import edu.calpoly.csc365.example1.dao.Dao;
 import edu.calpoly.csc365.example1.dao.DaoManager;
@@ -13,8 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
-@WebServlet(name = "ReservationEditServlet", urlPatterns = "/edit_reservation")
+@WebServlet(name = "ReservationCancelServlet", urlPatterns = "/cancel_reservation")
 public class ReservationEditServlet extends HttpServlet {
     private DaoManager dm;
     private Dao<Reservation> reservationDao;
@@ -33,11 +32,11 @@ public class ReservationEditServlet extends HttpServlet {
         Long credit_no = Long.parseLong(request.getParameter("Credit_no"));
         Integer flight_no = Integer.parseInt(request.getParameter("Flight_no"));
         Boolean paid = Boolean.parseBoolean(request.getParameter("Has_paid"));
-        Boolean cancelled = Boolean.parseBoolean(request.getParameter("Cancelled"));
+        Boolean cancelled = Boolean.parseBoolean('true');
         Reservation reservation = new Reservation(id, passenger_id, seat_no, cost, credit_no, flight_no, paid, cancelled);
         this.reservationDao.update(reservation);
         request.setAttribute("reservation", reservation);
-        request.getRequestDispatcher("reservation_edit.jsp").forward(request, response);
+        request.getRequestDispatcher("reservation_cancel.jsp").forward(request, response);
     }
 
     @Override
@@ -45,8 +44,6 @@ public class ReservationEditServlet extends HttpServlet {
         String id = request.getParameter("id");
         Reservation reservation = this.reservationDao.getById(Integer.parseInt(id));
         request.setAttribute("reservation", reservation);
-        request.getRequestDispatcher("reservation_edit.jsp").forward(request, response);
+        request.getRequestDispatcher("reservation_cancel.jsp").forward(request, response);
     }
 }
-
-

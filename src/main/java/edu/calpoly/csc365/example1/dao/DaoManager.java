@@ -138,4 +138,7 @@ public class DaoManager {
   public SeatDao getSeatDao() throws SQLException {
     return new SeatDaoImpl(this.getConnection());
   }
+  public SeatsDaoImpl getSeatsDao() throws SQLException {
+    return new SeatsDaoImpl(this.getConnection());
+  }
 }

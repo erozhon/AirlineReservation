@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -37,7 +30,7 @@ Message:
             <td>${reservation.hasPaid}</td>
             <td>${reservation.cancelled}</td>
             <td><a class="waves-effect waves-light btn" data-id="${reservation.id}" href="edit_reservation?id=${reservation.id}">Edit</a></td>
-             <td><a class="waves-effect waves-light btn" data-id="${reservation.id}" href="edit_reservation?id=${reservation.id}">Cancel</a></td>
+            <td><a class="waves-effect waves-light btn" data-id="${reservation.id}" href="cancel_reservation?id=${reservation.id}">Cancel</a></td>
         </tr>
     </c:forEach>
 </table>
