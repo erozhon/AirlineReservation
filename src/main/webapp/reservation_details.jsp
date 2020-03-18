@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -22,8 +15,7 @@
 <body>
 <h3>Reservations</h3>
 <p><a class="waves-effect waves-light btn" href="./">home</a></p>
-Message:
-<p>${message}</p>
+Reservation Details
 <table class="highlight">
     <tr><th>id</th><th>passenger id</th><th>seat no</th><th>cost</th><th>credit card no</th><th>flight no</th><th>has paid</th><th>cancelled</th></tr>
     <c:forEach items="${reservations}" var="reservation">
@@ -36,12 +28,9 @@ Message:
             <td>${reservation.flightNo}</td>
             <td>${reservation.hasPaid}</td>
             <td>${reservation.cancelled}</td>
-            <td><a class="waves-effect waves-light btn" data-id="${reservation.id}" href="edit_reservation?id=${reservation.id}">Edit</a></td>
-             <td><a class="waves-effect waves-light btn" data-id="${reservation.id}" href="edit_reservation?id=${reservation.id}">Cancel</a></td>
         </tr>
     </c:forEach>
 </table>
-<p><a class="waves-effect waves-light btn" href="reservationcreate">Add</a></p>
 <p><a class="waves-effect waves-light btn" href="./">home</a></p>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 
