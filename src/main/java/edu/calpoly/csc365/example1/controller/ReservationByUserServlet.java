@@ -38,9 +38,8 @@ public class ReservationByUserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Integer passengerId = Integer.parseInt(request.getParameter("Passenger_id"));
-        Set<Reservation> reservations = ((ReservationDaoImpl)reservationDao).getByPassengerId(passengerId);
+        Set<Reservation> reservations = ((ReservationDaoImpl) reservationDao).getByPassengerId(passengerId);
         request.setAttribute("reservations", reservations);
         request.getRequestDispatcher("reservationsbyuser.jsp").forward(request, response);
     }
-
 }

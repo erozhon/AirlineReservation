@@ -152,7 +152,7 @@ import java.util.Set;
             PreparedStatement preparedStatement = null;
             try {
                 preparedStatement = this.conn.prepareStatement(
-                        "UPDATE Reservations SET Passenger_id=?, Seat_no=?, Cost=?, Credit_no=?, Flight_no=?, Has_paid=?, Cancelled WHERE Id=?");
+                        "UPDATE Reservations SET Passenger_id=?, Seat_no=?, Cost=?, Credit_no=?, Flight_no=?, Has_paid=?, Cancelled=? WHERE Id=?");
 
                 preparedStatement.setInt(1, obj.getPassengerId());
                 preparedStatement.setInt(2, obj.getSeatNo());

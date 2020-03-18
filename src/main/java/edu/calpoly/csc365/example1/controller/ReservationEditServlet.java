@@ -1,4 +1,4 @@
-  package edu.calpoly.csc365.example1.controller;
+package edu.calpoly.csc365.example1.controller;
 
 import edu.calpoly.csc365.example1.dao.Dao;
 import edu.calpoly.csc365.example1.dao.DaoManager;
